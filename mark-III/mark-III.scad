@@ -60,8 +60,14 @@ difference(){
 
     
     // cutout for HX-711
+    translate([r/3, 0, 0])
+    cube([34 + tol, 21 + tol, 3.2], center = true);
     
-    cube([21 + tol, 34 + tol, 3.2], center = true);
+    // central coutout junction
+    
+    linear_extrude(2)
+        circle(3);
+    
 
 }
 
