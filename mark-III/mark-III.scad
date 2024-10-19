@@ -10,9 +10,9 @@ wall = 5;
 
 
 // size calculations
-dout = din + wall;
+dout = din;
 
-d = dout * 25.4;
+d = dout * 25.4 + 2*wall;
 r = d / 2;
 
 // thickness
@@ -38,7 +38,7 @@ difference(){
             
             // seat for big c
             translate([r - 40, -16.5, 0])
-                cube([25, 33, 1.5]);
+                cube([28, 33, 1.5]);
          
             // cutout for inner piece to move
             translate([r - 33, -12, 0])
@@ -46,22 +46,22 @@ difference(){
             
             // outlet for cables
             translate([r-40, 0, 0])
-                cube([10, 5, 3], center = true);
+                cube([14, 12, 8], center = true);
             
             // connection channel for cables
             translate([5*r/8, 0, 0])
-                cube([2, 1.261 * r, 4], center = true);
+                cube([2, 1.261 * r, 8], center = true);
             
             //channels to center
             translate([0, -1, 0])
-                cube([r - 10, 2, 2]);
+                cube([r - 10, 2, 4]);
         }
     }
 
     
     // cutout for HX-711
     translate([r/3, 0, 0])
-    cube([34 + tol, 21 + tol, 3.2], center = true);
+    cube([34 + tol, 21 + tol, 6], center = true);
     
     // central coutout junction
     
@@ -83,9 +83,11 @@ square([wall,10]);
 
 rotate([0,0,30])
     difference() {  
-        translate([r-2, -17/2, h])
-            cube([17, 17, 20]);  // Larger cube
-        translate([r, -15/2, h+1])
+        translate([r-2, -17/2, h-h])
+            cube([19, 17, 20]);  // Larger cube
+        translate([r, -15/2, h+1-h])
             cube([20, 15, 18]); // Smaller cube (cutout)
+        translate([r+2, 0, h-h])
+            cube([2, 10, 5], center=true);
         }
 
