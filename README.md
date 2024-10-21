@@ -11,7 +11,7 @@ DT -> Black
 SCL -> Red
 VCC -> Yellow
 
-Patch side
+ESP32/Patch side
 GND -> Red
 DT -> Yellow
 SCL -> Green
