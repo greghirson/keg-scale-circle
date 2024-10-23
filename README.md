@@ -7,14 +7,23 @@ Using 50kg load cells connected to HX-711
 Connectors
 
 Connectors for RJ11
+
 Sensor Side
+
 GND -> Green
+
 DT -> Black
+
 SCL -> Red
+
 VCC -> Yellow
 
 ESP32/Patch side
+
 GND -> Red
+
 DT -> Yellow
+
 SCL -> Green
+
 VCC -> Black
